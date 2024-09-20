@@ -1,0 +1,185 @@
+TAREA_4-- CON EJEMPLOS
+
+Inicio, Agregado y Subida de Archivos a GitHub con Git
+
+Esta guía mejorada te llevará paso a paso a través del proceso de iniciar un proyecto, agregar archivos y subirlos a GitHub usando Git, ahora con ejemplos prácticos para cada paso.
+
+## Requisitos Previos
+
+1. Instala Git en tu computadora: [Descarga Git](https://git-scm.com/downloads)
+2. Crea una cuenta en GitHub: [GitHub](https://github.com/)
+
+## Paso 1: Configuración Inicial de Git
+
+Abre tu terminal o línea de comandos y configura tu identidad en Git:
+
+```bash
+git config --global user.name "Ana García"
+git config --global user.email "ana.garcia@email.com"
+```
+
+## Paso 2: Crear un Nuevo Repositorio en GitHub
+
+1. Inicia sesión en GitHub
+2. Haz clic en el botón "+" en la esquina superior derecha
+3. Selecciona "New repository"
+4. Dale un nombre a tu repositorio, por ejemplo: "mi-primer-proyecto"
+5. Elige si será público o privado
+6. Haz clic en "Create repository"
+
+## Paso 3: Iniciar un Repositorio Local
+
+1. Crea una nueva carpeta para tu proyecto en tu computadora
+2. Abre la terminal y navega a esa carpeta:
+
+```bash
+cd Documentos/proyectos/mi-primer-proyecto
+```
+
+3. Inicia un nuevo repositorio Git:
+
+```bash
+git init
+```
+
+Verás un mensaje como: "Initialized empty Git repository in /ruta/a/mi-primer-proyecto/.git/"
+
+## Paso 4: Agregar Archivos al Repositorio
+
+1. Crea un archivo en tu carpeta del proyecto. Por ejemplo, crea un archivo llamado `index.html` con el siguiente contenido:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Primer Proyecto</title>
+</head>
+<body>
+    <h1>Hola Mundo con Git y GitHub!</h1>
+</body>
+</html>
+```
+
+2. Agrega el archivo al área de preparación:
+
+```bash
+git add index.html
+```
+
+Para agregar todos los archivos, usarías:
+
+```bash
+git add .
+```
+
+## Paso 5: Realizar el Primer Commit
+
+Guarda los cambios en tu repositorio local:
+
+```bash
+git commit -m "Primer commit: Añadido index.html"
+```
+
+Verás un mensaje confirmando el commit, algo como:
+"[main (root-commit) f7fde4a] Primer commit: Añadido index.html
+ 1 file changed, 9 insertions(+)
+ create mode 100644 index.html"
+
+## Paso 6: Conectar tu Repositorio Local con GitHub
+
+Vincula tu repositorio local con el repositorio remoto en GitHub:
+
+```bash
+git remote add origin https://github.com/anagarcia/mi-primer-proyecto.git
+```
+
+(Reemplaza la URL con la de tu repositorio en GitHub)
+
+## Paso 7: Subir los Archivos a GitHub
+
+Sube tus cambios al repositorio remoto:
+
+```bash
+git push -u origin main
+```
+
+Verás un output similar a:
+"Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 246 bytes | 246.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/anagarcia/mi-primer-proyecto.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'."
+
+## Flujo de Trabajo Continuo
+
+Para futuros cambios, sigue este ciclo:
+
+1. Realiza cambios en tus archivos. Por ejemplo, modifica `index.html`:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Proyecto Actualizado</title>
+</head>
+<body>
+    <h1>Hola Mundo con Git y GitHub!</h1>
+    <p>Este es un párrafo nuevo.</p>
+</body>
+</html>
+```
+
+2. Agrega los cambios: 
+```bash
+git add index.html
+```
+
+3. Haz un commit: 
+```bash
+git commit -m "Actualizado index.html con un nuevo párrafo"
+```
+
+4. Sube los cambios: 
+```bash
+git push
+```
+
+## Consejos Adicionales
+
+- Usa `git status` para ver el estado de tus archivos:
+  ```bash
+  git status
+  ```
+  Verás algo como:
+  "On branch main
+  Your branch is up to date with 'origin/main'.
+  Changes not staged for commit:
+    (use "git add <file>..." to update what will be committed)
+    (use "git restore <file>..." to discard changes in working directory)
+          modified:   index.html"
+
+- Usa `git log` para ver el historial de commits:
+  ```bash
+  git log
+  ```
+  Verás una lista de commits como:
+  "commit 8f1e50e0f7ec32d6dc102e8e58f4b3f17b3e0647 (HEAD -> main, origin/main)
+  Author: Ana García <ana.garcia@email.com>
+  Date:   Mon Sep 25 10:00:00 2023 -0500
+      Actualizado index.html con un nuevo párrafo
+  
+  commit f7fde4a8e9110e36baf1c0447713acf604ced0f5
+  Author: Ana García <ana.garcia@email.com>
+  Date:   Mon Sep 25 09:00:00 2023 -0500
+      Primer commit: Añadido index.html"
+
+- Crea ramas con `git branch nombre-rama` para trabajar en características separadas:
+  ```bash
+  git branch nueva-caracteristica
+  git checkout nueva-caracteristica
+  ```
+  Ahora estás en una nueva rama llamada "nueva-caracteristica"
+
+¡Felicidades! Ahora tienes una guía práctica con ejemplos para iniciar un proyecto, agregar archivos y subirlos a GitHub usando Git.
